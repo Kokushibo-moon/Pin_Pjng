@@ -1,6 +1,6 @@
 import pygame
 from pygame import *
-from time import *
+from time import *   #⁡⁣⁢⁣Я ЗАКОНЧИЛ⁡
 from random import *
 mixer.init()
 pygame.init()
@@ -77,9 +77,7 @@ speed_x = 3
 speed_y = 3
 
 
-a = 0
-real_time = False
-num_fire = 0
+
 PAKETKA = Player("Racket.png", 100, 350, 50, 100, player_speed)
 PAKETKA2 = Player2('Racket.png', 600, 350, 50, 100, player_speed)
 ball = GameSprite('gouda.jpg', 250, 350, 50, 50, 6)
@@ -121,22 +119,7 @@ while game:
 
 
 
-        
-       
-        """konec = sprite.spritecollide(PAKETA, monsters, False)
-        if konec or lost >= 10:
-            finish = True
-            lox = font.render('ЛОХ', True, (100, 50, 0))
-            window.blit(lox, (200, 200))
-
-
-
-        text_lose = font.render('Пропущено: ' + str(lost), True, (255, 255, 255))
-        text_lose2 = font.render('Сбито: ' + str(a), True, (255, 255, 255))
-        window.blit(text_lose, (10, 10))
-        window.blit(text_lose2, (10, 40))"""
-
-
+    
 
         clock.tick(FPS)
 
