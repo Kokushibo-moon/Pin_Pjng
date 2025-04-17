@@ -73,7 +73,8 @@ class Player2(GameSprite):
 
 
 
-
+speed_x = 3
+speed_y = 3
 
 
 a = 0
@@ -81,9 +82,10 @@ real_time = False
 num_fire = 0
 PAKETKA = Player("", 50, 300, 100, 170, player_speed)
 PAKETKA2 = Player2('', 850, 300, 100, 170, player_speed)
+ball = GameSprite('', 400, 400, 20, 30, 6)
 
 
-win = font.render('Не ЛОХ', True, (100, 50, 0))
+not_win = font.render('ЛОХ', True, (100, 50, 0))
 finish = False
 game = True
 while game:
@@ -99,6 +101,19 @@ while game:
         window.blit(background, (0, 0))
         PAKETKA.update()
         PAKETKA2.update()
+
+        ball.rect.x += speed_x
+        ball.rect.y += speed_y
+
+        if ball.rect.y > win_height - 50 or ball.rect.y < 0:
+            speed_y *= -1
+
+        if sprite.collide_rect(PAKETKA, ball) or sprite.collide_rect(PAKETKA2, ball):
+            speed_x *= -1
+
+        if ball.rect.x < 0:
+            finish = True
+            window.blit(not_win, (200, 200))
 
 
 
